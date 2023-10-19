@@ -9,6 +9,7 @@ import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import LandingPage from "./pages/LandingPage";
 import Footer from "./components/Footer";
+import Register from "./pages/Register";
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </main>
       <Footer />

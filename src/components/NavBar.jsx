@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaXmark, FaBars } from "react-icons/fa6";
+import { FaXmark, FaBars, FaCartShopping } from "react-icons/fa6";
 import logo from "../assets/logo2.png";
 
 const NavBar = () => {
@@ -73,8 +73,8 @@ const NavBar = () => {
             >
               Login
             </a>
-            <button className="bg-amber-400 text-white py-2 px-4 transition-all duration-300 rounded-full hover:bg-neutralDGray">
-              Sign up
+            <button className="bg-amber-400 text-white py-2 px-3 transition-all duration-300 rounded-full hover:bg-neutralDGray">
+              <FaCartShopping className="inline-block " />
             </button>
           </div>
 
