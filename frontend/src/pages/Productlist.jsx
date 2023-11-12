@@ -1,49 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Product from "../components/Product.jsx";
 import products from "../products.js";
-const Productlist = () => {
-  return (
-    <>
-      <div className="bg-white">
-        <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 mt-10">
-          <h2 className="text-2xl font-bold tracking-tight text-neutralDGray">
-            Latest Products
-          </h2>
+import { Row, Col } from "react-bootstrap";
+import { listProducts } from "../actions/productActions.js";
+import Message from "../components/Message.jsx";
+import Loader from "../components/Loader.jsx";
 
-          <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-10">
-            {products.map((product) => (
-              <div key={product.id} className="group relative">
-                <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md  group-hover:opacity-75 lg:aspect-none lg:h-80">
-                  <img
-                    src={product.image}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                    style={{ objectFit: "contain" }} // Set object-fit to "contain"
-                  />
-                </div>
-                <div className="mt-4 flex justify-between text-xl">
-                  <div>
-                    <h3 className=" font-bold text-neutralDGray">
-                      <a href={product.href}>
-                        <span aria-hidden="true" className="absolute inset-0" />
-                        {product.name}
-                      </a>
-                    </h3>
-                  </div>
-                  <p className="text-lg font-medium text-neutralDGray">
-                    {product.price} DT
-                  </p>
-                </div>
-                <div className="text-start text-neutralDGray text-sm mt-4">
-                  {product.description}
-                </div>
-                <div className="mt-4 flex justify-center text-neutralGray">
-                  <a className="btn-primary">View details</a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </>
+const Productlist = () => {
+  const dispatch = useDispatch();
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
+  useEffect(() => {
+    dispatch(listProducts());
+  }, [dispatch]);
+
+  return (
+    <div className="py-48">
+      <h1 className=" text-xl py-4 ml-10"> Latest products </h1>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant="danger">{error}</Message>
+      ) : (
+        <Row>
+          {products?.map((product) => (
+            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+              <Product product={product} />
+            </Col>
+          ))}
+        </Row>
+      )}
+    </div>
   );
 };
 

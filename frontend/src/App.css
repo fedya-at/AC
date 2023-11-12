@@ -2,10 +2,25 @@
 
 body {
   font-family: "inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 2;
+}
+.rating span {
+  margin: 0.1rem;
 }
 
 header {
   z-index: 10001 !important;
+}
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .btn-primary {

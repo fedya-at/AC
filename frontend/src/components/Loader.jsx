@@ -1,23 +1,20 @@
 import React from "react";
-import "../app.css";
+import { Spinner } from "react-bootstrap";
 
 const Loader = () => {
   return (
-    <div className="loader-container">
-      <div className="loader-overlay" />
-      <div className="loader">
-        <div className="cloud front">
-          <span className="left-front" />
-          <span className="right-front" />
-        </div>
-        <span className="sun sunshine" />
-        <span className="sun" />
-        <div className="cloud back">
-          <span className="left-back" />
-          <span className="right-back" />
-        </div>
-      </div>
-    </div>
+    <Spinner
+      animation="border"
+      role="status"
+      style={{
+        width: "100px",
+        height: "100px",
+        margin: "auto",
+        display: "block",
+      }}
+    >
+      <span className="sr-only">Loading...</span>
+    </Spinner>
   );
 };
 

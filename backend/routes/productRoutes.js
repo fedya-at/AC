@@ -1,8 +1,7 @@
-import express from 'express';
-import Product from '../models/productModel.js';
-import asyncHandler from 'express-async-handler';
-import {ObjectId} from 'mongoDB';
-import mongoose from 'mongoose';
+import express from "express";
+import Product from "../models/productModel.js";
+import asyncHandler from "express-async-handler";
+import mongoose from "mongoose";
 import {
   getProducts,
   getProductById,
@@ -13,14 +12,12 @@ import {
 import { protect, admin } from "../middleware/authMiddleware.js";
 const router = express.Router();
 
-
 router.route("/").get(getProducts).post(protect, admin, createProduct);
 router
   .route("/:id")
   .get(getProductById)
   .put(protect, admin, updateProduct)
   .delete(protect, admin, deleteProduct);
-
 
 /*
 // @desc fetch all products
