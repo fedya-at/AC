@@ -3,7 +3,7 @@ import React from "react";
 const Pricing = () => {
   const cards = [
     {
-      title: "Basic",
+      title: "Monthly",
       price: 10,
       features: [
         "Get started with messaging",
@@ -12,7 +12,7 @@ const Pricing = () => {
       ],
     },
     {
-      title: "Startup",
+      title: "Annualy",
       price: 24,
       features: [
         "All features in Basic",
@@ -21,7 +21,7 @@ const Pricing = () => {
       ],
     },
     {
-      title: "Enterprise",
+      title: "Lifetime",
       price: 48,
       features: [
         "All features in Startup",

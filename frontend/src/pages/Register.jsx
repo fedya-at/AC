@@ -43,7 +43,7 @@ const Register = () => {
   return (
     <div className="mt-48">
       <FormContainer>
-        <h1>Sign Up</h1>
+        <h1 className="mb-4 text-2xl font-bold">Sign Up</h1>
         {loading && <Loader />}
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
@@ -87,12 +87,16 @@ const Register = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Button type="submit" variant="primary" className="bg- bg-purple-600">
+          <Button
+            type="submit"
+            variant="primary"
+            className="bg- bg-purple-600 mt-4"
+          >
             Register
           </Button>
         </Form>
 
-        <Row className="py-3">
+        <Row className="py-6">
           <Col>
             Already have an Account?{" "}
             <Link

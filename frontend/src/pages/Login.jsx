@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <div className="mt-48">
       <FormContainer className="FormContainer">
-        <h1>Sign In</h1>
+        <h1 className="mb-4 text-2xl font-bold">Sign In</h1>
         {loading && <Loader />}
         {error && <Message variant="danger">{error}</Message>}
         <Form onSubmit={submitHandler}>
@@ -60,7 +60,11 @@ const Login = () => {
             ></Form.Control>
           </Form.Group>
           <h1> </h1>
-          <Button type="submit" variant="primary" className="text-brandPrimary">
+          <Button
+            type="submit"
+            variant="primary"
+            className="bg-brandPrimary mt-4"
+          >
             Sign In
           </Button>
         </Form>

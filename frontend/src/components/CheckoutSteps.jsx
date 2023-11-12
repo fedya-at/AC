@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
-import { Nav } from 'react-bootstrap';
+import React from "react";
+import { Nav } from "react-bootstrap";
 
 const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
   return (
-    <Nav className='justify-content-center mb-4'>
+    <Nav className="justify-content-center mb-4 mt-44">
       <Nav.Item>
         {step1 ? (
-          <Nav.Link to='/login'>Sign In</Nav.Link>
+          <Nav.Link to="/login">Sign In</Nav.Link>
         ) : (
           <Nav.Link disabled>Sign In</Nav.Link>
         )}
@@ -15,7 +15,7 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
 
       <Nav.Item>
         {step2 ? (
-          <Nav.Link to='/shipping'>Shipping</Nav.Link>
+          <Nav.Link to="/shipping">Shipping</Nav.Link>
         ) : (
           <Nav.Link disabled>Shipping</Nav.Link>
         )}
@@ -23,7 +23,7 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
 
       <Nav.Item>
         {step3 ? (
-          <Nav.Link to='/payment'>Payment</Nav.Link>
+          <Nav.Link to="/payment">Payment</Nav.Link>
         ) : (
           <Nav.Link disabled>Payment</Nav.Link>
         )}
@@ -31,7 +31,7 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
 
       <Nav.Item>
         {step4 ? (
-          <Nav.Link to='/placeorder'>Place Order</Nav.Link>
+          <Nav.Link to="/placeorder">Place Order</Nav.Link>
         ) : (
           <Nav.Link disabled>Place Order</Nav.Link>
         )}
