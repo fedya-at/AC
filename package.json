@@ -75,16 +75,16 @@
     "to-regex-range": "^5.0.1",
     "ts-interface-checker": "^0.1.13",
     "util-deprecate": "^1.0.2",
+    "vite": "^4.5.0",
     "wrappy": "^1.0.2",
     "yaml": "^2.3.3"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install-server": "cd backend && npm install",
     "start-server": "cd backend && node server",
     "install-client": "cd frontend && npm install",
-    "build-client": "cd frontend && node_modules/.bin/vite build",
+    "build-client": "cd frontend && vite build",
     "start-client": "cd frontend && vite"
   },
   "keywords": [],
