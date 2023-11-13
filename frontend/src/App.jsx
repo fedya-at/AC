@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
@@ -29,6 +30,7 @@ import ProductEditScreen from "./pages/ProductEditScreen";
 import OrderListScreen from "./pages/OrderListScreen";
 
 function App() {
+
   return (
     <Router>
       <NavBar />

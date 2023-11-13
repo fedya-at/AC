@@ -1,4 +1,4 @@
-import express, { application } from "express";
+import express from "express";
 import dotenv from "dotenv";
 import colors from "colors";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
@@ -8,16 +8,20 @@ import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import cookieParser from "cookie-parser";
-import path from "path"; // Import the path module
+import path from "path";
 import { fileURLToPath } from "url";
 
 dotenv.config();
 connectDB();
 const app = express();
 app.use(express.json());
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.use("/assets", express.static(path.join(__dirname, "src/assets")));
+
 if (process.env.NODE_ENV === "production") {
-  const __dirname = path.resolve();
   app.use("/uploads", express.static("/var/data/uploads"));
   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
@@ -25,12 +29,12 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
   );
 } else {
-  const __dirname = path.resolve();
   app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
   app.get("/", (req, res) => {
     res.send("API is running....");
   });
 }
+
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
