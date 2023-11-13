@@ -1,7 +1,7 @@
 const products = [
   {
     name: "Solar Panel 100W",
-    image: "/images/solar-panel-100w.jpg",
+    image: "../assets/solar-panel-100w.jpg",
     description:
       "High-efficiency solar panel with a power output of 100 Watts. Suitable for charging batteries, powering small appliances, and more.",
     brand: "SolarTech",
@@ -13,7 +13,7 @@ const products = [
   },
   {
     name: "Portable Solar Panel Charger",
-    image: "/images/portable-solar-charger.jpg",
+    image: "../assets/portable-solar-charger.jpg",
     description:
       "Compact and lightweight portable solar panel charger with USB output. Ideal for charging smartphones, tablets, and other USB devices on the go.",
     brand: "SolarEase",
@@ -25,7 +25,7 @@ const products = [
   },
   {
     name: "Solar Panel 200W",
-    image: "/images/solar-panel-200w.jpg",
+    image: "../assets/solar-panel-200w.jpg",
     description:
       "High-capacity solar panel with a power output of 200 Watts. Suitable for larger-scale off-grid power systems, RVs, cabins, and more.",
     brand: "SolarTech",
@@ -37,7 +37,7 @@ const products = [
   },
   {
     name: "Solar Charge Controller",
-    image: "/images/solar-charge-controller.jpg",
+    image: "../assets/solar-charge-controller.jpg",
     description:
       "Ampere and voltage regulator for solar panels. Protects batteries from overcharging and regulates the charging process for optimal performance.",
     brand: "SolarEase",
@@ -49,7 +49,7 @@ const products = [
   },
   {
     name: "Solar Power Inverter 1000W",
-    image: "/images/solar-inverter-1000w.jpg",
+    image: "../assets/solar-inverter-1000w.jpg",
     description:
       "Power inverter for converting DC solar power to AC electricity. Provides 1000 Watts of continuous power, suitable for various appliances.",
     brand: "SolarTech",
