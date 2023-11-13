@@ -30,6 +30,11 @@ import ProductEditScreen from "./pages/ProductEditScreen";
 import OrderListScreen from "./pages/OrderListScreen";
 
 function App() {
+  useEffect(() => {
+    fetch("http://localhost:5000") // Replace with your actual backend URL
+      .then((res) => res.text())
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
   return (
     <Router>
