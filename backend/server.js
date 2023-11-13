@@ -8,6 +8,7 @@ import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import cookieParser from "cookie-parser";
+import cors from "cors"; // Import the cors middleware
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -15,6 +16,12 @@ dotenv.config();
 connectDB();
 const app = express();
 app.use(express.json());
+
+const corsOptions = {
+  origin: "https://ac-a8xw.onrender.com",
+};
+
+app.use(cors(corsOptions));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
