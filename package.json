@@ -80,7 +80,12 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-server": "cd backend && npm install",
+    "start-server": "cd backend && node server",
+    "install-client": "cd frontend && npm install",
+    "build-client": "cd frontend && vite build",
+    "start-client": "cd frontend && vite"
   },
   "keywords": [],
   "author": "",
