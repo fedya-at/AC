@@ -33,17 +33,13 @@ if (process.env.NODE_ENV === "production") {
   app.use("/uploads", express.static("/var/data/uploads"));
 
   // Serve static files from the 'frontend/build' directory
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.use(express.static("../frontend/build"));
 
   // Catch-all route for any other routes, serve the 'index.html' file
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"))
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
   );
 } else {
-  // Development mode: serve the 'uploads' and 'frontend' directories
-  app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
-  app.use(express.static(path.join(__dirname, "../frontend")));
-
   app.get("/", (req, res) => {
     res.send("API is running....");
   });

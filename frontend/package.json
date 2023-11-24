@@ -1,6 +1,6 @@
 {
   "name": "photovoltaic",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://ac-photovoltaic.onrender.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
