@@ -18,7 +18,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-  origin: "https://ac-a8xw.onrender.com",
+	origin: 'http://localhost:5173',
 };
 
 app.use(cors(corsOptions));
